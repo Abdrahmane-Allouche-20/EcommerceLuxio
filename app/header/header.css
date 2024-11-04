@@ -1,0 +1,12 @@
+
+.text-shadow{
+  text-shadow:0px 0px 3px  white;
+ 
+}
+
+.icon-shadow{
+  filter: drop-shadow(0px 0px 3px  white);
+}
+li{
+  list-style: none;
+}
