@@ -7,6 +7,7 @@ import Image from "next/image";
 import CategoriesIcon from "../../public/categories.webp";
 import { Suspense } from "react";
 import Loading from "../Loading";
+
 function Products() { 
   const {products,categories,totalProducts,favorites,finalPrice, handleCart, handleFavorite}=useAppContext()
    const [limit, setLimit] = useState(12);
@@ -30,9 +31,10 @@ function Products() {
   );
  
 
- 
+  
   return (
    
+    <>
     
       <div className="flex flex-col md:flex-row gap-3 md:gap-5 mx-4  my-2 md:my-4">
       <div className={`p-2 md:p-4 bg-blue-50/50  ${showCategories ? "h-full w-full md:max-w-[15%]" : " h-fit w-fit"} overflow-hidden  shadow-xl rounded-xl relative  `}>
@@ -131,7 +133,7 @@ function Products() {
         </Suspense>
       </div>
     </div>
-    
+    </>
   );
 }
 

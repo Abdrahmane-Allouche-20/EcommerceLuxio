@@ -31,3 +31,27 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(1px 1px 2px   #ffffff48)
 
 }
+/* For WebKit browsers (Chrome, Safari) */
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+  height: 6px; /* Height of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #c3daff; /* Background color of the track */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(rgb(82, 163, 234), rgb(202, 110, 255), rgb(255, 162, 255)); /* Gradient for the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners */
+}
+
+
+/* For Firefox */
+.scrollbar-custom {
+  scrollbar-width: thin; /* Options: auto | thin */
+  scrollbar-color: blue violet; /* Thumb color and track color */
+}
+
