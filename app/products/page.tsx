@@ -5,10 +5,8 @@ import { FaBoxOpen } from "react-icons/fa";
 import React, {useState} from "react";
 import Image from "next/image";
 import CategoriesIcon from "../../public/categories.webp";
-
-
-
-//
+import { Suspense } from "react";
+import Loading from "../Loading";
 function Products() { 
   const {products,categories,totalProducts,favorites,finalPrice, handleCart, handleFavorite}=useAppContext()
    const [limit, setLimit] = useState(12);
@@ -88,6 +86,7 @@ function Products() {
             Our Products
           </h1>
         </div>
+        <Suspense fallback={<Loading/>}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-3  my-5">
  {filteredProducts.length > 0
    ? filteredProducts.map((product) => (
@@ -128,8 +127,8 @@ function Products() {
      </button>
    )}
  </div>
- </div>
-        
+        </div>
+        </Suspense>
       </div>
     </div>
     
