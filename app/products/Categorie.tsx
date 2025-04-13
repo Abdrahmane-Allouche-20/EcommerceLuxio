@@ -4,7 +4,6 @@ import  {useState} from "react";
 import Image from "next/image";
 type Props = {
     categories: string[];
-    products: any[];
     setChosenCategory: (category: string) => void;
   };
 function Categorie({categories,setChosenCategory}:Props) {
