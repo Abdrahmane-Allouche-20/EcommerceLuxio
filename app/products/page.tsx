@@ -37,7 +37,7 @@ function Products() {
   return (
     <div className="flex flex-col md:flex-row gap-3 md:gap-5 max-w-6xl mx-auto my-4">
       <Categorie
-        products={products}
+      
         categories={categories}
         setChosenCategory={setChosenCategory}
       />
