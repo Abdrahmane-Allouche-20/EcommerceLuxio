@@ -9,7 +9,6 @@ export interface Product {
   category: string;
   price: number;
   brand: string;
-  discountPercentage: number;
   rating: number;
   images: string[];
   thumbnail: string;
@@ -20,7 +19,6 @@ export interface Favorite {
   id: number;
   title: string;
   price: number;
-  discountPercentage: number;
   description: string;
   category: string;
   rating: number;
@@ -30,12 +28,10 @@ export interface Favorite {
 
 export interface Cart {
   price: number;
-  discountPercentage: number;
   thumbnail: string;
   id: number;
   title: string;
   quantity: number;
-  finalPrice: number; // Add finalPrice to Cart interface
 }
 
 // Define the context type
@@ -46,13 +42,14 @@ interface ProductContextType {
   favorites: Favorite[];
   cart: Cart[];
   getTotalQuantity: () => number;
+
   handleCart: (product: Product) => void;
   IncreaseQuantity: (cart: Cart) => void;
   handleDecreaseQuantity: (item: Cart) => void;
+
   handleFavorite: (product: Product) => void;
   RemoveFavorite: (favorite: Favorite) => void;
   ClearCart:()=>void;
-  finalPrice(price:number,Discount:number):string;
 }
 
 // Create context with a default value
@@ -94,9 +91,6 @@ export const GlobalState: React.FC<GlobalStateProps> = ({ children }) => {
     };
   }, []);
 
-  function calculateFinalPrice(price: number, discountPercentage: number, quantity: number): number {
-    return parseFloat(((price - price * (discountPercentage / 100)) * quantity).toFixed(2));
-  }
   function RemoveFavorite(favorite:Favorite){
     setFavorites(favorites.filter(fav=>fav.id!==favorite.id))
   }
@@ -106,11 +100,11 @@ export const GlobalState: React.FC<GlobalStateProps> = ({ children }) => {
       if (isCart) {
         return prevItems.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1, finalPrice: calculateFinalPrice(item.price, item.discountPercentage, item.quantity + 1) }
+            ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       } else {
-        return [...prevItems, { ...product, quantity: 1, finalPrice: calculateFinalPrice(product.price, product.discountPercentage, 1) }];
+        return [...prevItems, { ...product, quantity: 1}];
       }
     });
   }
@@ -122,7 +116,7 @@ export const GlobalState: React.FC<GlobalStateProps> = ({ children }) => {
     setCart((prevItems) => {
       return prevItems.map((item) =>
         item.id === cartItem.id
-          ? { ...item, quantity: item.quantity + 1, finalPrice: calculateFinalPrice(item.price, item.discountPercentage, item.quantity + 1) }
+          ? { ...item, quantity: item.quantity + 1 }
           : item
       );
     });
@@ -133,7 +127,7 @@ export const GlobalState: React.FC<GlobalStateProps> = ({ children }) => {
       return prevItems
         .map((item) =>
           item.id === cartItem.id
-            ? { ...item, quantity: Math.max(item.quantity - 1, 0), finalPrice: calculateFinalPrice(item.price, item.discountPercentage, Math.max(item.quantity - 1, 0)) }
+            ? { ...item, quantity: Math.max(item.quantity - 1, 0) }
             : item
         )
         .filter((item) => item.quantity > 0); // Remove items with quantity 0
@@ -156,7 +150,7 @@ function ClearCart(){
   setCart([])
 }
   return (
-    <ProductContext.Provider value={{ClearCart,finalPrice,RemoveFavorite, getTotalQuantity, handleDecreaseQuantity, products, IncreaseQuantity, categories,  totalProducts, favorites, cart, handleCart, handleFavorite }}>
+    <ProductContext.Provider value={{ClearCart,RemoveFavorite, getTotalQuantity, handleDecreaseQuantity, products, IncreaseQuantity, categories,  totalProducts, favorites, cart, handleCart, handleFavorite }}>
       {children}
     </ProductContext.Provider>
   );
