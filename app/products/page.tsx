@@ -42,10 +42,10 @@ function Products() {
         setChosenCategory={setChosenCategory}
       />
 
-      <div className="flex-1 mx-auto p-2 md:p-4 bg-[#feeba8] shadow-xl rounded-xl">
+      <div className="flex-1 mx-auto p-2 md:p-4  shadow-xl rounded-xl">
         <div className="flex items-center gap-3">
-          <FaBoxOpen className="text-xl sm:text-3xl mt-1" />
-          <h1 className="text-xl sm:text-2xl font-black">Our Products</h1>
+          <FaBoxOpen className="text-xl text-white sm:text-3xl mt-1" />
+          <h1 className="text-xl text-white sm:text-2xl font-black">Our Products</h1>
         </div>
 
         <Suspense fallback={<Loading />}>
@@ -65,7 +65,7 @@ function Products() {
             {limit < totalProducts && chosenCategory === "All" && (
               <button
                 onClick={increaseLimit}
-                className="rounded-lg px-3 py-1.5 text-base bg-sky-400 opacity-70 hover:opacity-100"
+                className="rounded-lg px-3 py-1.5 text-base bg-red-600 opacity-70 hover:opacity-100"
               >
                 Show More
               </button>
@@ -74,7 +74,7 @@ function Products() {
             {limit > 30 && chosenCategory === "All" && (
               <button
                 onClick={decreaseLimit}
-                className="rounded-lg px-3 py-1.5 text-base bg-sky-400 opacity-70 hover:opacity-100"
+                className="rounded-lg px-3 py-1.5 text-base bg-red-600 opacity-70 hover:opacity-100"
               >
                 Show Less
               </button>

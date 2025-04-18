@@ -18,7 +18,7 @@ function Favorites() {
       
       :
       <div className=' col-span-1 md:col-span-2  '>
-       <Link href='/products'  className='flex h-[70vh] justify-center items-center flex-col text-2xl lg:text-4xl text-center text-blue-600 font-black'>
+       <Link href='/products'  className='flex h-[70vh] justify-center items-center flex-col text-2xl lg:text-4xl text-center text-red-600 font-black'>
        <p>Add Some Product for Later Check</p>
         <Image src={heart} alt='add to favorite' className='md:w-[200px] w-[100px]'/>
         </Link>

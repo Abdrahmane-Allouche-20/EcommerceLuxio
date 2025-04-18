@@ -41,9 +41,9 @@ function ProductCard({
   return (
     <div
       key={product.id}
-      className="col-span-1 bg-[#f4cf49] rounded-xl p-2 md:p-3 from-blue-200">
+      className="col-span-1 bg-white  rounded-xl p-2 md:p-3 ">
       <div
-        className={`flex relative bg-[#feeba86d] justify-center items-center rounded-lg  overflow-hidden `}>
+        className={`flex relative border-2 border-red-600 justify-center items-center rounded-lg  overflow-hidden `}>
         <Image
           src={product.thumbnail}
           priority
@@ -83,7 +83,7 @@ function ProductCard({
       <div className="flex justify-between items-center">
         <button
           onClick={() => handleCart(product)}
-          className="px-4 py-1.5  text-sm rounded-lg duration-300 hover:scale-110 bg-white  font-black"
+          className="px-4 py-1.5  text-sm rounded-lg duration-300 text-white hover:scale-110 bg-red-600  font-black"
         >
           Buy Item
         </button>

@@ -10,9 +10,9 @@ interface favoriteListProps{
 }
 function FavoriteList({favorite,RemoveFavorite,handleCart}:favoriteListProps) {
   return (
-    <div  className={` col-span-1 rounded-xl  p-1.5 md:p-3  border-b-8 border-b-[#79651d] bg-[#f4cf49] `}>
+    <div  className={` col-span-1 rounded-xl  p-1.5 md:p-3  border-b-8 border-b-red-600 bg-white `}>
          <div className='flex gap-2 md:gap-4'>
-         <div className={` w-[100px]  md:basis-[35%] rounded-lg bg-[#ffeeae]`}>
+         <div className={` w-[100px]  md:basis-[35%] rounded-lg border-2 border-red-600`}>
           {/* Update Image component with width and height */}
           <Image 
             src={favorite.thumbnail} 
@@ -36,8 +36,8 @@ function FavoriteList({favorite,RemoveFavorite,handleCart}:favoriteListProps) {
           </div>
           </div>
           <div className=' mt-3 flex flex-col md:flex-row justify-between lg:items-center text-xs sm:text-base font-black gap-2 '>
-            <button onClick={()=>handleCart(favorite)} className='py-1.5 md:py-2 rounded-lg   md:px-3 bg-[#ffeeae]'>Buy Item</button>
-            <button onClick={()=>RemoveFavorite(favorite)} className='py-1.5 md:py-2 rounded-lg   md:px-3 bg-[#ffeeae] '>Remove From Favorites</button>
+            <button onClick={()=>handleCart(favorite)} className='py-1.5 md:py-2 rounded-lg  text-white md:px-3 bg-red-600'>Buy Item</button>
+            <button onClick={()=>RemoveFavorite(favorite)} className='py-1.5 md:py-2 rounded-lg text-white  md:px-3 bg-red-600 '>Remove From Favorites</button>
           </div>
         </div>
   )

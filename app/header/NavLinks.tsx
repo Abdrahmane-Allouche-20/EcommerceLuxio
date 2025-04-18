@@ -22,16 +22,16 @@ function NavLinks() {
     <>
     
     <nav>
-          <button className="md:hidden block text-[#0152af]" onClick={toggleMenu}>
+          <button className="md:hidden block text-red-600" onClick={toggleMenu}>
                      {showMenu ? <IoClose size={24} /> : <IoMenu size={24} />}
               </button>
 
           
          <ul className={
-        `${showMenu ? "flex" : "hidden"} md:flex absolute md:relative top-20 left-1/2 -translate-x-1/2 md:top-0 p-6 sm:p-0 
+        `${showMenu ? "flex" : "hidden"} md:flex absolute sm:bg-transparent bg-slate-950  md:relative top-20 left-1/2 -translate-x-1/2 md:top-0 p-6 sm:p-0 
            w-[90%]
           md:rounded-none rounded-xl
-          md:w-auto z-30 bg-[#f4cf49]  flex-col md:flex-row justify-center  gap-5 
+          md:w-auto z-30   flex-col md:flex-row justify-center  gap-5 
           text-base lg:text-lg font-black`}>
          {navLinks.map((link, index) => {
               const isActive = link.href === "/" ? pathName === "/" : pathName.startsWith(link.href);
@@ -40,11 +40,11 @@ function NavLinks() {
                 <li key={index} onClick={() => setShowMenu(false)}>
                   <Link
                     className={`${
-                      isActive ? "translate-x-3  sm:-translate-x-0 text-[#0152af] font-black" : "text-shadow text-white  sm:hover:translate-x-0  hover:translate-x-3  sm:hover:-translate-y-1"
+                      isActive ? "translate-x-3  sm:-translate-x-0 text-red-600 font-black" : "text-shadow text-white  sm:hover:translate-x-0  hover:translate-x-3  sm:hover:-translate-y-1"
                     } duration-300 flex items-center gap-1.5`}
                     href={link.href}
                   >
-                    <span className={`${isActive ? "text-[#0152af]" : "icon-shadow"} duration-300 text-lg`}>
+                    <span className={`${isActive ? "text-red-600 " : "icon-shadow"} duration-300 text-lg`}>
                       {link.icon}
                     </span>
                     {link.name}

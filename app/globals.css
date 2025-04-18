@@ -1,38 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.text-shadow{ text-shadow:0px 0px 3px  white;}
+
 body{
+background-color: #000;
   overflow-x: hidden;
   max-height: 100vh;
  
 }
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-.whiteGlass{
-  /* From https://css.glass */
-background: rgba(255, 255, 255, 0.482);
-border-radius: 20px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
-}
 
-.Img{
-  filter: drop-shadow(1px 2px 3px  black)
-}
-.shadowPics{
-  
-    filter: drop-shadow(1px 1px 2px   #ffffff48)
-
-}
-/* For WebKit browsers (Chrome, Safari) */
-/* For WebKit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
   width: 6px; /* Width of the scrollbar */
   height: 6px; /* Height of the scrollbar */
@@ -49,9 +25,4 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 
-/* For Firefox */
-.scrollbar-custom {
-  scrollbar-width: thin; /* Options: auto | thin */
-  scrollbar-color: blue violet; /* Thumb color and track color */
-}
 

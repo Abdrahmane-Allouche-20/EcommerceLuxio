@@ -12,8 +12,8 @@ function CartList({ cart, handleDecreaseQuantity, IncreaseQuantity }: CartListPr
   const { thumbnail, title,price, quantity } = cart;
 
   return (
-    <div className="p-1.5 md:p-4 bg-[#0152af] rounded-lg flex flex-col gap-3">
-      <div className="rounded-lg w-full bg-blue-300 overflow-hidden flex justify-center">
+    <div className="p-1.5 md:p-4 bg-white rounded-lg flex flex-col gap-3">
+      <div className="rounded-lg w-full border-2 border-red-600 overflow-hidden flex justify-center">
         <Image
           src={thumbnail}
           alt={title || 'Cart product'}
@@ -24,12 +24,12 @@ function CartList({ cart, handleDecreaseQuantity, IncreaseQuantity }: CartListPr
         />
       </div>
 
-      <div className="mt-1 text-sm sm:text-base text-white text-center">
+      <div className="mt-1 text-sm sm:text-base  text-center">
         <h1 className="font-black truncate">{title}</h1>
         <p className="font-semibold mt-2">Price: ${price}</p>
       </div>
 
-      <div className="flex items-center justify-between mt-1 text-white">
+      <div className="flex items-center justify-between mt-1 ">
         <span className="text-sm sm:text-base font-semibold">
           Quantity: {quantity}
         </span>
