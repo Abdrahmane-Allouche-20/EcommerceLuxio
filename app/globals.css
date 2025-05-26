@@ -15,12 +15,12 @@ background-color: #000;
 }
 
 ::-webkit-scrollbar-track {
-  background: #c3daff; /* Background color of the track */
+  background: #000000; /* Background color of the track */
   border-radius: 10px; /* Rounded corners */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(rgb(82, 163, 234), rgb(202, 110, 255), rgb(255, 162, 255)); /* Gradient for the scrollbar thumb */
+  background-color: gray;
   border-radius: 10px; /* Rounded corners */
 }
 
