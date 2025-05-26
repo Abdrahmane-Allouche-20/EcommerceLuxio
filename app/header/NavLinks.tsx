@@ -40,11 +40,11 @@ function NavLinks() {
                 <li key={index} onClick={() => setShowMenu(false)}>
                   <Link
                     className={`${
-                      isActive ? "translate-x-3  sm:-translate-x-0 text-red-600 font-black" : "text-shadow text-white  sm:hover:translate-x-0  hover:translate-x-3  sm:hover:-translate-y-1"
+                      isActive ? "translate-x-3  sm:-translate-x-0 text-white font-black" : "text-shadow text-gray-500  sm:hover:translate-x-0  hover:translate-x-3  sm:hover:-translate-y-1"
                     } duration-300 flex items-center gap-1.5`}
                     href={link.href}
                   >
-                    <span className={`${isActive ? "text-red-600 " : "icon-shadow"} duration-300 text-lg`}>
+                    <span className={`${isActive ? "text-white " : "icon-shadow"} duration-300 text-lg`}>
                       {link.icon}
                     </span>
                     {link.name}

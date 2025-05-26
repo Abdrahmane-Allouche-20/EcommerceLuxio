@@ -35,7 +35,7 @@ function CartPage() {
           <div className="flex-1">
             <Link href="/products">
               <div className="flex flex-col gap-6 justify-center items-center h-[70vh] transition-all duration-200">
-                <p className="text-xl md:text-3xl lg:text-5xl text-center text-red-600 font-black">
+                <p className="text-xl md:text-3xl lg:text-5xl text-center text-gray-400 font-black">
                   Oops! Your Hands Are Empty!
                 </p>
                 <Image

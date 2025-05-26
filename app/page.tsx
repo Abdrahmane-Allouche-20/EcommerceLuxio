@@ -9,7 +9,7 @@ import { airpods, cart, contact, favorite } from '../public/Images'
 const cardStyle = "  cursor-pointer hover:scale-[1.03] duration-300 rounded-2xl relative";
 const titleStyle = " font-semibold text-xs md:text-base";
 const iconStyle = "text-white font-black text-lg md:text-xl lg:text-2xl";
-const linkTextStyle = "hover:text-black/80 absolute hover:-translate-y-2 duration-300 text-shadow font-black ";
+const linkTextStyle = "hover:text-black absolute hover:-translate-y-2 duration-300 text-shadow font-black ";
 
 export default function HeroSection() {
   return (
@@ -17,21 +17,20 @@ export default function HeroSection() {
       <Suspense fallback={<Loading />}>
         <div className="p-1 md:p-2 w-full flex flex-col md:flex-row gap-3 h-[85vh]">
 
-          {/* Left big card  f4cf49 0152af*/}
 
-          <div className={`p-6 flex-1 h-full bg-red-600 ${cardStyle}`}>
+          <div className={`p-6 flex-1 h-full bg-[#252422]${cardStyle}`}>
             <span className="text-white mb-6 capitalize font-semibold">More offers</span>
-            <h1 className="text-[20px] md:text-[40px] lg:text-[50px] font-black text-shadow text-white md:w-[90%] lg:w-[70%] capitalize">
+            <h1 className="text-[20px] md:text-[40px] lg:text-[50px] font-black text-shadow text-gray-300 md:w-[90%] lg:w-[70%] capitalize">
               There is something for everybody
             </h1>
             <Link
               href="/products"
-              className="my-4 p-1 text-white bg-black hover:scale-110 duration-300 rounded-sm md:rounded-full  py-1 md:py-3 px-3 md:px-6 flex justify-between items-center text-base md:text-xl gap-3 md:gap-5 font-black w-fit"
+              className="my-4 p-1 text-gray-300 bg-black hover:scale-110 duration-300 rounded-sm md:rounded-full  py-1 md:py-3 px-3 md:px-6 flex justify-between items-center text-base md:text-xl gap-3 md:gap-5 font-black w-fit"
             >
               <h1 className=" ">
                 All Products
               </h1>
-              <MdOutlineShoppingCart className=" text-white mt-1 text-xl md:text-2xl" />
+              <MdOutlineShoppingCart className=" text-gray-300 mt-1 text-xl md:text-2xl" />
             </Link>
             <Image
               src={airpods}
@@ -48,7 +47,7 @@ export default function HeroSection() {
 
             <div className={`p-4 flex-1 bg-white  md:mb-3 ${cardStyle}`}>
               <div className="flex justify-between items-center">
-                <h1 className={`${titleStyle} text-red-600`}>My Cart</h1>
+                <h1 className={`${titleStyle} text-[#252422]`}>My Cart</h1>
                 <CgArrowTopRight className={iconStyle} />
               </div>
               <Image
@@ -58,7 +57,7 @@ export default function HeroSection() {
               />
               <Link
                 href="/cart"
-                className={`${linkTextStyle} text-red-600 bottom-0 md:bottom-2 left-2 text-lg md:text-2xl lg:text-4xl`}
+                className={`${linkTextStyle} text-[#252422] bottom-0 md:bottom-2 left-2 text-lg md:text-2xl lg:text-4xl`}
               >
                 View Your Items
               </Link>
@@ -69,10 +68,10 @@ export default function HeroSection() {
             <div className="flex-1 md:h-[50%] flex flex-col md:flex-row gap-1 md:gap-3">
               {/* Contact */}
 
-              <div className={`p-3 bg-red-600  flex-1 ${cardStyle}`}>
+              <div className={`p-3 bg-[#252422]  flex-1 ${cardStyle}`}>
                 <div className="flex justify-between items-center">
                   <h1 className={`text-white ${titleStyle}`}>Email Us</h1>
-                  <CgArrowTopRight className={`text-white ${iconStyle}`} />
+                  <CgArrowTopRight className={`text-gray-300 ${iconStyle}`} />
                 </div>
                 <Image
                   src={contact}
@@ -81,7 +80,7 @@ export default function HeroSection() {
                 />
                 <Link
                   href="/contact"
-                  className={`${linkTextStyle} text-white bottom-0 md:bottom-2 md:left-2 text-lg md:text-2xl lg:text-4xl`}
+                  className={`${linkTextStyle} text-gray-300 bottom-0 md:bottom-2 md:left-2 text-lg md:text-2xl lg:text-4xl`}
                 >
                   Contact
                 </Link>
@@ -92,7 +91,7 @@ export default function HeroSection() {
 
               <div className={`bg-white p-3 flex-1 ${cardStyle}`}>
                 <div className="flex justify-between items-center">
-                  <h1 className={`${titleStyle} text-red-600`}>My Favorite</h1>
+                  <h1 className={`${titleStyle} text-[#gray-300]`}>My Favorite</h1>
                   <CgArrowTopRight className={iconStyle} />
                 </div>
                 <Image
@@ -102,7 +101,7 @@ export default function HeroSection() {
                 />
                 <Link
                   href="/fav"
-                  className={`${linkTextStyle} text-red-600 bottom-0 md:bottom-2 md:left-2 text-lg md:text-2xl lg:text-4xl`}
+                  className={`${linkTextStyle} text-[#gray-300] bottom-0 md:bottom-2 md:left-2 text-lg md:text-2xl lg:text-4xl`}
                 >
                   Favorites
                 </Link>

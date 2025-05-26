@@ -10,9 +10,9 @@ interface favoriteListProps{
 }
 function FavoriteList({favorite,RemoveFavorite,handleCart}:favoriteListProps) {
   return (
-    <div  className={` col-span-1 rounded-xl  p-1.5 md:p-3  border-b-8 border-b-red-600 bg-white `}>
+    <div  className={` col-span-1 rounded-xl  p-1.5 md:p-3  border-b-8 border-b-[#454443] bg-[#252422] `}>
          <div className='flex gap-2 md:gap-4'>
-         <div className={` w-[100px]  md:basis-[35%] rounded-lg border-2 border-red-600`}>
+         <div className={` w-[100px]  md:basis-[35%] rounded-lg border-2 border-[#454443]`}>
           {/* Update Image component with width and height */}
           <Image 
             src={favorite.thumbnail} 
@@ -25,7 +25,7 @@ function FavoriteList({favorite,RemoveFavorite,handleCart}:favoriteListProps) {
           />
         </div>
 
-          <div className='flex-1   text-sm sm:text-lg'>
+          <div className='flex-1  text-gray-400 text-sm sm:text-lg'>
             <h1 className='truncate font-black mb-1.5'>{favorite.title}</h1>
             <ul className='flex flex-col gap-1'>
               <li className='font-bold'>Brand: {favorite.brand}</li>
@@ -36,8 +36,8 @@ function FavoriteList({favorite,RemoveFavorite,handleCart}:favoriteListProps) {
           </div>
           </div>
           <div className=' mt-3 flex flex-col md:flex-row justify-between lg:items-center text-xs sm:text-base font-black gap-2 '>
-            <button onClick={()=>handleCart(favorite)} className='py-1.5 md:py-2 rounded-lg  text-white md:px-3 bg-red-600'>Buy Item</button>
-            <button onClick={()=>RemoveFavorite(favorite)} className='py-1.5 md:py-2 rounded-lg text-white  md:px-3 bg-red-600 '>Remove From Favorites</button>
+            <button onClick={()=>handleCart(favorite)} className='py-1.5 md:py-2 rounded-lg   md:px-3 bg-white'>Buy Item</button>
+            <button onClick={()=>RemoveFavorite(favorite)} className='py-1.5 md:py-2 rounded-lg  md:px-3 bg-[#454443] text-white '>Remove From Favorites</button>
           </div>
         </div>
   )
